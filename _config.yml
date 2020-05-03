@@ -17,7 +17,7 @@ permalink:        pretty
 
 # Setup
 title:            Unfriendly Data
-tagline:          'Data Scientist at A1'
+tagline:          
 description:      'Machine Learning and fully automated luxury communism'
 url:              http://hyde.getpoole.com
 baseurl:          /
