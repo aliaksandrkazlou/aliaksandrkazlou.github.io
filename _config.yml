@@ -19,7 +19,7 @@ permalink:        pretty
 title:            Unfriendly Data
 tagline:          
 description:      'Machine Learning and fully automated luxury space communism'
-url:              
+url:              aliaksandrkazlou.github.io
 baseurl:          /aliaksandrkazlou.github.io/
 
 author:
@@ -29,5 +29,7 @@ author:
 paginate:         5
 
 # Custom vars
-github:           https://github.com/aliaksandrkazlou
+version:          2.1.0
+
+github:
   repo:           https://github.com/aliaksandrkazlou/aliaksandrkazlou.github.io
