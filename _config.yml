@@ -1,5 +1,4 @@
 # Dependencies
-# markdown:         redcarpet
 markdown:         kramdown
 highlighter:      pygments
 
@@ -19,9 +18,9 @@ permalink:        pretty
 # Setup
 title:            Unfriendly Data
 tagline:          
-description:      'Machine Learning and fully automated luxury communism'
+description:      'Machine Learning and fully automated luxury space communism'
 url:              http://hyde.getpoole.com
-baseurl:          /
+baseurl:          http://aliaksandrkazlou.github.io/unfriendlydata/
 
 author:
   name:           'Aliaksandr Kazlou'
