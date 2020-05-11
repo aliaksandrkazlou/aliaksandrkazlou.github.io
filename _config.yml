@@ -20,7 +20,7 @@ title:            Unfriendly Data
 tagline:          
 description:      'Machine Learning and fully automated luxury space communism'
 url:              http://hyde.getpoole.com
-baseurl:          http://aliaksandrkazlou.github.io/unfriendlydata/
+baseurl:          http://aliaksandrkazlou.github.io
 
 author:
   name:           'Aliaksandr Kazlou'
