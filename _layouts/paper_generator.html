@@ -17,25 +17,34 @@
         padding: 100px;
         display: inline-block;
         width: 600px;
-        border: 1px solid red;
+        border: 1px solid;
         margin-right: 2em;
+    }
+    div#main {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
     }
 </style>
 
-<h1>Welcome to my paper generator</h1>
+<div id="main">
+    <h1>Welcome to my paper generator</h1>
+    <p>Description</p>
 
-<div class="row align-items-center">
-    <div class="col-sm">
-        <div id="slider-new-york-times"></div>
+    <div class="row align-items-center">
+        <div class="col-sm">
+            <div id="slider-new-york-times"></div>
+        </div>
+    </div>
+
+    <div>
+        <p id="paper"></p>
     </div>
 </div>
 
-<div>
-    <p id="paper"></p>
-</div>
-
 <script>
-    var width = 1000;
+    var width = 860;
     var height = 200;
     var margin = {top: 20, right: 50, bottom: 50, left: 40};
 
