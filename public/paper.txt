@@ -2,15 +2,16 @@
 
 \usepackage{comment, multicol}
 \usepackage{hyperref}
+\usepackage{indentfirst}
 
 \usepackage{calc,pict2e,picture}
 \usepackage{textgreek,textcomp,gensymb,stix}
 
 \setcounter{secnumdepth}{2}
 
-\title{\LaTeX.js Showcase}
-\author{made with $\varheartsuit$ by Michael Brade}
-\date{2017--2021}
+\title{${paperTitle}}
+%\author{made with $\varheartsuit$ by Michael Brade}
+%\date{2017--2021}
 
 
 \begin{document}
@@ -19,58 +20,17 @@
 
 
 \begin{abstract}
-Value: ${value}
 This document will show most of the features of \LaTeX.js while at the same time being a gentle introduction to \LaTeX.
 In the appendix, the API as well as the format of custom macro definitions in JavaScript will be explained.
 \end{abstract}
 
 
-\section{Characters}
+\section{Theory}
 
-It is possible to input any UTF-8 character either directly or by character code
-using one of the following:
+${firstChapter}
 
-\begin{itemize}
-\item \texttt{\textbackslash symbol\{"00A9\}}: \symbol{"00A9}
-\item \verb|\char"A9|: \char"A9
-\item \verb|^^A9 or ^^^^00A9|: ^^A9 or ^^^^00A9
-\end{itemize}
+\section{Data and Methods}
 
-\bigskip
+${formula}
 
-\noindent
-Special characters, like those:
-\begin{center}
-\$ \& \% \# \_ \{ \} \~{} \^{} \textbackslash % \< \>  \"   % TODO cannot be typeset
-\end{center}
-%
-have to be escaped.
-
-More than 200 symbols are accessible through macros. For instance: 30\,\textcelsius{} is
-86\,\textdegree{}F. See also Section~\ref{sec:symbols}.
-
-
-
-\section{Spaces and Comments}
-
-Spaces and comments, of course, work just as they do in \LaTeX.
-This is an            % stupid
-% Better: instructive <----
-example: Supercal%
-ifragilist%
-icexpialidocious
-
-It does not matter whether you enter one or several     spaces after a word, it
-will always be typeset as one space---unless you force several spaces, like\ \ now.
-
-New \TeX users may miss whitespaces after a command. % renders wrong
-Experienced \TeX{} users are \TeX perts, and know how to use whitespaces. % renders correct
-
-Longer comments can be embedded in the \texttt{comment} environment:
-This is another  \begin  {comment}
-rather stupid,
-but helpful
-\end
-{comment}
-example for embedding comments in your document.
 \end{document}

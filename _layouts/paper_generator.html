@@ -8,29 +8,35 @@
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="https://unpkg.com/d3-simple-slider"></script>
 <script src="/public/data.js"></script>
+<script src="/public/text_elements.js"></script>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/latex.js/dist/latex.js"></script>
 
 <style>
+    h1 {
+        margin: 50px;
+    }
+
     p#paper {
-        padding: 100px;
+        padding: 60px;
         display: inline-block;
         width: 600px;
         border: 1px solid;
         margin-right: 2em;
     }
+
     div#main {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
     }
 </style>
 
 <div id="main">
-    <h1>Welcome to my paper generator</h1>
-    <p>Description</p>
+    <h1>Welcome to my automated scientific discovery engine</h1>
+    <p>Choose your fighter</p>
 
     <div class="row align-items-center">
         <div class="col-sm">
@@ -46,7 +52,7 @@
 <script>
     var width = 860;
     var height = 200;
-    var margin = {top: 20, right: 50, bottom: 50, left: 40};
+    var margin = { top: 20, right: 50, bottom: 50, left: 40 };
 
     var barsNumber = 81;
 
@@ -58,10 +64,10 @@
 
     var hist = histGenerator(data.map(x => x.effect));
 
-    var dataNewYorkTimes = hist.map(d => ({
-            effect: d.x0,
-            value: d.length || 0
-        }));
+    var histData = hist.map(d => ({
+        effect: d.x0,
+        value: d
+    }));
 
     var svg = d3
         .select('div#slider-new-york-times')
@@ -73,7 +79,7 @@
 
     var xBand = d3
         .scaleBand()
-        .domain(dataNewYorkTimes.map(d => d.effect))
+        .domain(histData.map(d => d.effect))
         .range([margin.left, width - margin.right])
         .padding(padding);
 
@@ -83,15 +89,15 @@
         .range([
             margin.left + xBand.bandwidth() / 2 + xBand.step() * padding - 0.5,
             width -
-                margin.right -
-                xBand.bandwidth() / 2 -
-                xBand.step() * padding -
-                0.5,
+            margin.right -
+            xBand.bandwidth() / 2 -
+            xBand.step() * padding -
+            0.5,
         ]);
 
     var y = d3
         .scaleLinear()
-        .domain([0, d3.max(dataNewYorkTimes, d => d.value)])
+        .domain([0, d3.max(histData, d => d.value.length || 0)])
         .nice()
         .range([height - margin.bottom, margin.top]);
 
@@ -109,42 +115,93 @@
     var slider = g =>
         g.attr('transform', `translate(0,${height - margin.bottom})`).call(
             d3
-            .sliderBottom(xLinear)
-            .min(min)
-            .max(max - 0.1)
-            .step(0.1)
-            .tickFormat(d3.format('.2'))
-            .ticks(10)
-            .default(0)
-            .on('onchange', value => draw(value))
+                .sliderBottom(xLinear)
+                .min(min)
+                .max(max - 0.1)
+                .step(0.1)
+                .tickFormat(d3.format('.2'))
+                .ticks(10)
+                .default(0)
+                .on('onchange', value => draw(value))
         );
 
     var bars = svg
         .append('g')
         .selectAll('rect')
-        .data(dataNewYorkTimes);
+        .data(histData);
 
     var barsEnter = bars
         .enter()
         .append('rect')
         .attr('x', d => xBand(d.effect))
-        .attr('y', d => y(d.value) - 10)
-        .attr('height', d => y(0) - y(d.value))
+        .attr('y', d => y(d.value.length || 0) - 10)
+        .attr('height', d => y(0) - y(d.value.length || 0))
         .attr('width', xBand.bandwidth() - 1);
 
     svg.append('g').call(yAxis);
     svg.append('g').call(slider);
+    svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-dasharray", ("10,3"))
+        .style("stroke-width", 1)
+        .attr("x1", xBand(2))
+        .attr("y1", 140)
+        .attr("x2", xBand(2))
+        .attr("y2", 10);
+
+
+    svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-dasharray", ("10,3"))
+        .style("stroke-width", 1)
+        .attr("x1", xBand(-1.9))
+        .attr("y1", 140)
+        .attr("x2", xBand(-1.9))
+        .attr("y2", 10);
 
     svg.select('.track-overlay').attr('stroke-width', 120); // Ensure drag zone covers everything
 
     function drawPaper(i) {
-        let generator = new latexjs.HtmlGenerator({hyphenate: true});
+        let generator = new latexjs.HtmlGenerator({ hyphenate: true });
 
         fetch('/public/paper.txt')
             .then(response => response.text())
             .then(text => {
-                let replaced = text.replace("${value}", dataNewYorkTimes[i].value);
-                var res = latexjs.parse(replaced, {generator: generator}).htmlDocument().documentElement.outerHTML;
+                var paperTitle = "";
+                var firstChapter = "";
+                if (histData[i].effect >= 1.96) {
+                    paperTitle = titlePositive
+                    firstChapter = chapterOnePositive;
+                } else if (histData[i].effect < 1.96 && histData[i].effect > -1.96) {
+                    paperTitle = titleNoEffect
+                    firstChapter = chapterOneNoEffect;
+                } else {
+                    paperTitle = titleNegative
+                    firstChapter = chapterOneNegative;
+                }
+
+
+                let effect = histData[i].value[Math.floor(Math.random() * histData[i].value.length)]
+                let randomModel = data.find(x => x.effect == effect)
+
+                console.log(randomModel)
+                console.log(randomModel.formula)
+
+                console.log(randomModel.log)
+                var log = randomModel.log == "TRUE" ? "\\log" : ""
+                console.log(log)
+                var params = randomModel.formula.map((x, i) => "\\beta_{" + (i + 1) + "}" + log + "{" + x + "}_{t}").join(" + ")
+                var formula = "$ {Unit.Sales_t} = \\alpha + " + params + "$"
+                console.log(formula)
+
+
+                var replaced = text
+                    .replace("${value}", histData[i].value)
+                    .replace("${firstChapter}", firstChapter)
+                    .replace("${formula}", formula)
+                    .replace("${paperTitle}", paperTitle)
+
+                var res = latexjs.parse(replaced, { generator: generator }).htmlDocument().documentElement.outerHTML;
                 d3.select('p#paper').html(res);
             });
     }
@@ -157,12 +214,11 @@
             .merge(bars)
             .attr('fill', d => (d.effect === bar ? '#94210a' : '#e0e0e0'));
 
-        d3.select('p#value-new-york-times').text(dataNewYorkTimes[i].value);
+        d3.select('p#value-new-york-times').text(histData[i].value.length || 0);
 
         drawPaper(i);
     };
 
     draw(0);
-    drawPaper(0);
 
 </script>
