@@ -222,7 +222,7 @@
                     .replace("${paperTitle}", paperTitle)
                     .replace("${varsDescription}", varsDescription)
                     .replace("${varsDescriptionAbstract}", varsDescriptionAbstract)
-                    .replace("${results}", results)
+                    .replace("${results}", results + ` (t = ${Number(randomModel.effect).toFixed(2)}).`)
                     .replace("${literature}", literature)
 
                 var res = latexjs.parse(replaced, { generator: generator }).htmlDocument().documentElement.outerHTML;
