@@ -44,7 +44,11 @@ As control variable I use GPD level, trade (exports plus imports), secondary enr
 government expenditures, physical capital, economic freedom, inequality, population size,
 all from the World Development Indicators. 
 I also create a measure of social unrest using Clio Infra (clioinfra.eu) indicating participation
+<<<<<<< HEAD
 in internal and external armed conflicts. \\par
 As the main independent variable, I use....
+=======
+in internal and external armed conflicts
+>>>>>>> 5047c273ac24fe1d9949fdb1f442ea172a7f8f49
 
 \end{document}
