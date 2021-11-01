@@ -190,8 +190,8 @@
                 console.log(randomModel.log)
                 var log = randomModel.log == "TRUE" ? "\\log" : ""
                 console.log(log)
-                var params = randomModel.formula.map((x, i) => "\\beta_{" + (i + 1) + "}" + log + "{" + x + "}_{t}").join(" + ")
-                var formula = "$ {Unit.Sales_t} = \\alpha + " + params + "$"
+                var params = randomModel.formula.map(x => x.replace("_", "\\,")).map((x, i) => "\\beta_{" + (i + 1) + "}" + log + "{" + x + "}_{ct}").join(" + ")
+                var formula = "$ {GDP\\,per\\,capita\\,growth_{ct}} = \\alpha + " + params + "+ \\epsilon_{ct}" + "$"
                 console.log(formula)
 
 

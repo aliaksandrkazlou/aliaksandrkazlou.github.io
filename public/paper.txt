@@ -3,6 +3,7 @@
 \usepackage{comment, multicol}
 \usepackage{hyperref}
 \usepackage{indentfirst}
+\usepackage{amsmath}
 
 \usepackage{calc,pict2e,picture}
 \usepackage{textgreek,textcomp,gensymb,stix}
@@ -31,6 +32,12 @@ ${firstChapter}
 
 \section{Data and Methods}
 
+This section evaluates the effect of democracy on economic growth using the empirical approach of recent panel-data based studies. 
+For this purpose, I rely on a regression commonly used in this literature:
+\bigbreak
 ${formula}
+\bigbreak
+I include country fixed effects in all specifications in order to remove the impact on economic growth of fixed country characteristics potentially correlated with democracy. 
+I also include year fixed effects to remove any common global changes in democracy that may be correlated with GDP.
 
 \end{document}
