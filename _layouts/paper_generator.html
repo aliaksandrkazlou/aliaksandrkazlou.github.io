@@ -196,7 +196,7 @@
                         return `\\beta_{${i + 1}}${log}{${varName}}_{ct}`
                     })
                     .join(" + ")
-                var formula = `$$ {GDP\\,per\\,capita\\,growth_{ct}} = \\alpha + ${params} + \\epsilon_{ct} $$`
+                var formula = `$$ {GDP\\,per\\,capita\\,growth_{ct+1}} = \\alpha + ${params} + \\mu_{c} + \\eta_{t} + \\epsilon_{ct} $$`
 
                 var varsPart = mainVarsDescription(randomModel.formula)
                 var varsPartAbstract = mainVarsDescriptionAbstract(randomModel.formula)
