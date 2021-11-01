@@ -59,6 +59,6 @@ var abstractPositive = "This article provides evidence that democracy has a sign
 var abstractNoEffect = "This article provides evidence that democracy has no significant effect on economic growth while controling for"
 var abstractNegative = "This article provides evidence that democracy has a significant negative effect on economic growth while controling for"
 
-var resultsPositive = "Democracy has a significant negative effect on economic growth"
+var resultsPositive = "Democracy has a significant positive effect on economic growth"
 var resultsNoEffect = "Democracy has no statistically significant effect on economic growth"
-var resultsNegative = "Democracy has a significant positive effect on economic growth"
+var resultsNegative = "Democracy has a significant negative effect on economic growth"
