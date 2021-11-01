@@ -170,18 +170,22 @@
                 var paperTitle = "";
                 var abstract = "";
                 var firstChapter = "";
+                var results = "";
                 if (histData[i].effect >= 1.96) {
                     paperTitle = titlePositive
                     abstract = abstractPositive
-                    firstChapter = chapterOnePositive;
+                    firstChapter = chapterOnePositive
+                    results = resultsPositive;
                 } else if (histData[i].effect < 1.96 && histData[i].effect > -1.96) {
                     paperTitle = titleNoEffect
                     abstract = abstractNoEffect
-                    firstChapter = chapterOneNoEffect;
+                    firstChapter = chapterOneNoEffect
+                    results = resultsNoEffect;
                 } else {
                     paperTitle = titleNegative
                     abstract = abstractNegative
-                    firstChapter = chapterOneNegative;
+                    firstChapter = chapterOneNegative
+                    results = resultsNegative;
                 }
 
 
@@ -214,6 +218,7 @@
                     .replace("${paperTitle}", paperTitle)
                     .replace("${varsDescription}", varsDescription)
                     .replace("${varsDescriptionAbstract}", varsDescriptionAbstract)
+                    .replace("${results}", results)
 
                 var res = latexjs.parse(replaced, { generator: generator }).htmlDocument().documentElement.outerHTML;
                 d3.select('p#paper').html(res);
