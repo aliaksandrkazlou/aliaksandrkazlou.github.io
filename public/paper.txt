@@ -39,4 +39,12 @@ ${formula}
 I include country fixed effects in all specifications in order to remove the impact on economic growth of fixed country characteristics potentially correlated with democracy. 
 I also include year fixed effects to remove any common global changes in democracy that may be correlated with GDP.
 
+The main outcome variable, GDP per capita growth is from the World Development Indicators. 
+As control variable I use GPD level, trade (exports plus imports), secondary enrollment, life expectancy, inflation,
+government expenditures, physical capital, economic freedom, inequality, population size,
+all from the World Development Indicators. 
+I also create a measure of social unrest using Clio Infra (clioinfra.eu) indicating participation
+in internal and external armed conflicts. \\par
+As the main independent variable, I use....
+
 \end{document}
