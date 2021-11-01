@@ -168,15 +168,19 @@
             .then(response => response.text())
             .then(text => {
                 var paperTitle = "";
+                var abstract = "";
                 var firstChapter = "";
                 if (histData[i].effect >= 1.96) {
                     paperTitle = titlePositive
+                    abstract = abstractPositive
                     firstChapter = chapterOnePositive;
                 } else if (histData[i].effect < 1.96 && histData[i].effect > -1.96) {
                     paperTitle = titleNoEffect
+                    abstract = abstractNoEffect
                     firstChapter = chapterOneNoEffect;
                 } else {
                     paperTitle = titleNegative
+                    abstract = abstractNegative
                     firstChapter = chapterOneNegative;
                 }
 
@@ -196,6 +200,7 @@
 
                 var replaced = text
                     .replace("${value}", histData[i].value)
+                    .replace("${abstract}", abstract)
                     .replace("${firstChapter}", firstChapter)
                     .replace("${formula}", formula)
                     .replace("${paperTitle}", paperTitle)

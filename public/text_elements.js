@@ -7,3 +7,7 @@ As discussed in Acemoglu and Robinson(1996): majority voting tends to increase a
 var titlePositive = "Democracy causes growth"
 var titleNoEffect = "Democracy does not causes growth"
 var titleNegative = "Democracy hinders growth"
+
+var abstractPositive = "This article provides evidence that democracy has a significant positive effect on economic growth"
+var abstractNoEffect = "This article provides evidence that democracy has no significant effect on economic growth"
+var abstractNegative = "This article provides evidence that democracy has a significant negative effect on economic growth"

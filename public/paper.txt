@@ -21,8 +21,7 @@
 
 
 \begin{abstract}
-This document will show most of the features of \LaTeX.js while at the same time being a gentle introduction to \LaTeX.
-In the appendix, the API as well as the format of custom macro definitions in JavaScript will be explained.
+${abstract}
 \end{abstract}
 
 
