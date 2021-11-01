@@ -198,12 +198,18 @@
                     .join(" + ")
                 var formula = `$ {GDP\\,per\\,capita\\,growth_{ct}} = \\alpha + ${params} + \\epsilon_{ct}$`
 
+                var varsPart = mainVarsDescription(randomModel.formula)
+                var conflictPart = randomModel.formula.includes("conflict") ? conflictsVariable : ""
+                var mainVarPart = mainVariable + (randomModel.formula.includes("freedom_house") ? "freedom house" : "e polity2") + "."
+                var varsDescription = varsPart + conflictPart + mainVarPart
+
                 var replaced = text
                     .replace("${value}", histData[i].value)
                     .replace("${abstract}", abstract)
                     .replace("${firstChapter}", firstChapter)
                     .replace("${formula}", formula)
                     .replace("${paperTitle}", paperTitle)
+                    .replace("${varsDescription}", varsDescription)
 
                 var res = latexjs.parse(replaced, { generator: generator }).htmlDocument().documentElement.outerHTML;
                 d3.select('p#paper').html(res);

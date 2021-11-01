@@ -8,6 +8,27 @@ var titlePositive = "Democracy causes growth"
 var titleNoEffect = "Democracy does not causes growth"
 var titleNegative = "Democracy hinders growth"
 
+var conflictsVariable = "I also create a measure of social unrest using Clio Infra (clioinfra.eu) indicating participation in internal and external armed conflicts. "
+var mainVariable = "As the main independent variable, I use "
+
+var varsDescription = new Map([
+    ["gdp_level", "GPD level"],
+    ["trade", "trade (exports plus imports)"],
+    ["enrollment", "secondary enrollment"],
+    ["life_expectancy", "life expectancy"],
+    ["inflation", "inflation"],
+    ["gov_size", "government expenditures"],
+    ["physical_capital", "physical capital"],
+    ["economic_freedom", "economic freedom"],
+    ["inequality", "inequality"],
+    ["population", "population size"],
+])
+
+var mainVarsDescription = formula => {
+    var mainVars = formula.filter(x => varsDescription.has(x)).map(x => varsDescription.get(x)).join(", ")
+    return `As control variable I use ${mainVars}, all from the World Development Indicators.`
+}
+
 var abstractPositive = "This article provides evidence that democracy has a significant positive effect on economic growth"
 var abstractNoEffect = "This article provides evidence that democracy has no significant effect on economic growth"
 var abstractNegative = "This article provides evidence that democracy has a significant negative effect on economic growth"
