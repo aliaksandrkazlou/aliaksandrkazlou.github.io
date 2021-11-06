@@ -196,7 +196,7 @@
                 let effect = histData[i].value[Math.floor(Math.random() * histData[i].value.length)]
                 let randomModel = data.find(x => x.effect == effect)
 
-                const noLog = new Set(["e_polity", "freedom_house"])
+                const noLog = new Set(["e_polity2", "freedom_house"])
                 var params = randomModel.formula
                     .map((x, i) => {
                         let log = randomModel.log == "FALSE" || noLog.has(x) ? "" : "\\log"
