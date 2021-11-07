@@ -96,7 +96,7 @@
     var min = -3.1;
     var max = 5;
     var histGenerator = d3.bin()
-        .domain([min, max])    // Set the domain to cover the entire intervall [0,1]
+        .domain([min, max])
         .thresholds(barsNumber);
 
     var hist = histGenerator(data.map(x => x.effect));
@@ -196,7 +196,7 @@
         .attr("x2", xBand(-1.9))
         .attr("y2", 10);
 
-    svg.select('.track-overlay').attr('stroke-width', 120); // Ensure drag zone covers everything
+    svg.select('.track-overlay').attr('stroke-width', 120);
 
     function drawPaper(i) {
         let generator = new latexjs.HtmlGenerator({ hyphenate: true });
@@ -229,7 +229,7 @@
                     literature = negativeLiterature
                 }
 
-
+                // Select a random regression within the slider's step
                 let effect = histData[i].value[Math.floor(Math.random() * histData[i].value.length)]
                 let randomModel = data.find(x => x.effect == effect)
 
