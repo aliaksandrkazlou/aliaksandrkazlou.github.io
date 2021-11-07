@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/article.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/base.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/book.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/katex.css">
+<head>
 
-<script src="https://d3js.org/d3.v6.min.js"></script>
-<script src="https://unpkg.com/d3-simple-slider"></script>
-<script src="/public/data.js"></script>
-<script src="/public/text_elements.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/article.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/book.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.js@0.12.4/dist/css/katex.css">
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/latex.js/dist/latex.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="/public/data.js"></script>
+    <script src="/public/text_elements.js"></script>
 
-<style>
-    h1 {
-        margin: 40px;
-        margin-bottom: 15px;
-    }
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/latex.js/dist/latex.js"></script>
 
-    p#paper {
-        padding: 40px;
-        display: inline-block;
-        width: 600px;
-        border: 1px solid;
-        margin-right: 2em;
-    }
+    <style>
+        h1 {
+            margin: 40px;
+            margin-bottom: 15px;
+        }
 
-    div#main {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-    }
+        p#paper {
+            padding: 40px;
+            display: inline-block;
+            width: 600px;
+            border: 1px solid;
+            margin-right: 2em;
+        }
 
-    div#links {
-        margin-bottom: 3em;
-    }
+        div#main {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
 
-    .btn {
-        gap: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        color: #333;
-        margin: 6px;
-        margin-bottom: 1em;
-    }
+        div#links {
+            margin-bottom: 3em;
+        }
 
-    .btn:hover,
-    .btn:active {
-        color: #777;
-    }
+        .btn {
+            gap: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            margin: 6px;
+            margin-bottom: 1em;
+        }
 
-    .btn-text {
-        font-size: 20px;
-        line-height: 14px;
-    }
-</style>
+        .btn:hover,
+        .btn:active {
+            color: #777;
+        }
+
+        .btn-text {
+            font-size: 20px;
+            line-height: 14px;
+        }
+    </style>
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
+</head>
 
 <div id="main">
     <h1>Welcome to the automated scientific discovery engine</h1>
