@@ -1,13 +1,17 @@
-var chapterOnePositive = "Democratization may foster growth by mitigating capital market imperfections (Galor and Zeira, 1993), or by more effective provision of public goods and education (Bourguignon and Verdier, 2000, Saint-Paul and Verdier, 1993, Benabou, 1996, Lizzeri and Persico, 2004), or by preventing politicians from monopolizing economic opportunities (Acemoglu et al., 2008, June, Acemoglu and Robinson, 2012). Increased political stability associated with democratic regimes may also benefit growth by stimulating investment (Alesina et al., 1996)."
-var chapterOneNoEffect = "The connection between political and economic freedom is controversial. Democratization may foster growth by mitigating capital market imperfections  (Galor and Zeira, 1993), or by more effective provision of public goods and education (Bourguignon and Verdier, 2000, Saint-Paul and Verdier, 1993, Benabou, 1996, Lizzeri and Persico, 2004), or by preventing politicians from monopolizing economic opportunities (Acemoglu, 2008, Acemoglu and Robinson, 2012). Increased political stability associated with democratic regimes may also benefit growth by stimulating investment (Alesina and Perotti, 1996). The literature has also indicated several disadvantages of democracy. Many have argued that democracy and growth are contradictory (Lindblom 1977, Schumpeter 1942) Majority voting may result in redistributive taxation which lowers growth rates  (Persson and Tabellini, 1994). Additionally, economic development usually requires unpopular reforms and democratic governments that implemented such reforms would possibly be voted out of office (Rao, 1984)."
-var chapterOneNegative = "The literature has indicated several disadvantages of democracy. Many have argued that democracy and growth are contradictory (Lindblom 1977, Schumpeter 1942) Majority voting may result in redistributive taxation which lowers growth rates  (Persson and Tabellini, 1994). Additionally, economic development usually requires unpopular reforms and democratic governments that implemented such reforms would possibly be voted out of office (Rao, 1984)."
-
 var titlePositive = "Democracy causes growth"
 var titleNoEffect = "Democracy does not cause growth"
 var titleNegative = "Democracy hinders growth"
 
+var abstractPositive = "This article provides evidence that democracy has a significant positive effect on economic growth while controling for"
+var abstractNoEffect = "This article provides evidence that democracy has no significant effect on economic growth while controling for"
+var abstractNegative = "This article provides evidence that democracy has a significant negative effect on economic growth while controling for"
+
+var chapterOnePositive = "Democratization may foster growth by mitigating capital market imperfections (Galor and Zeira, 1993), or by more effective provision of public goods and education (Bourguignon and Verdier, 2000, Saint-Paul and Verdier, 1993, Benabou, 1996, Lizzeri and Persico, 2004), or by preventing politicians from monopolizing economic opportunities (Acemoglu et al., 2008, June, Acemoglu and Robinson, 2012). Increased political stability associated with democratic regimes may also benefit growth by stimulating investment (Alesina et al., 1996)."
+var chapterOneNoEffect = "The connection between political and economic freedom is controversial. Democratization may foster growth by mitigating capital market imperfections  (Galor and Zeira, 1993), or by more effective provision of public goods and education (Bourguignon and Verdier, 2000, Saint-Paul and Verdier, 1993, Benabou, 1996, Lizzeri and Persico, 2004), or by preventing politicians from monopolizing economic opportunities (Acemoglu, 2008, Acemoglu and Robinson, 2012). Increased political stability associated with democratic regimes may also benefit growth by stimulating investment (Alesina and Perotti, 1996). The literature has also indicated several disadvantages of democracy. Many have argued that democracy and growth are contradictory (Lindblom 1977, Schumpeter 1942) Majority voting may result in redistributive taxation which lowers growth rates  (Persson and Tabellini, 1994). Additionally, economic development usually requires unpopular reforms and democratic governments that implemented such reforms would possibly be voted out of office (Rao, 1984)."
+var chapterOneNegative = "The literature has indicated several disadvantages of democracy. Many have argued that democracy and growth are contradictory (Lindblom 1977, Schumpeter 1942) Majority voting may result in redistributive taxation which lowers growth rates  (Persson and Tabellini, 1994). Additionally, economic development usually requires unpopular reforms and democratic governments that implemented such reforms would possibly be voted out of office (Rao, 1984)."
+
 var conflictsVariable = "I also create a measure of social unrest using Clio Infra (clioinfra.eu) indicating participation in internal and external armed conflicts. "
-var conflictsVariableShort = ", as well as internal and external armed conflicts"
+var conflictsVariableShort = ", as well as internal and external armed conflicts."
 var mainVariable = "As the main independent variable, I use "
 
 var varsDescription = new Map([
@@ -54,10 +58,6 @@ var negativeLiterature = [
     "\\item Persson, T., \\& Tabellini, G. (1994). Representative democracy and capital taxation. Journal of Public Economics, 55(1), 53-70.",
     "\\item Rao, V. (1984). Democracy and Economic Development. Studies in Comparative International Development 19, 67–81."
 ]
-
-var abstractPositive = "This article provides evidence that democracy has a significant positive effect on economic growth while controling for"
-var abstractNoEffect = "This article provides evidence that democracy has no significant effect on economic growth while controling for"
-var abstractNegative = "This article provides evidence that democracy has a significant negative effect on economic growth while controling for"
 
 var resultsPositive = "Democracy has a significant positive effect on economic growth"
 var resultsNoEffect = "Democracy has no statistically significant effect on economic growth"

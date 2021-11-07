@@ -5,7 +5,7 @@ title: About
 
 My name is Aliaksandr Kazlou. I do data science.
 
-I’m interested in causal inference, its instersection with machine learning, human behavior, measurements, NLP and functional programming. I mostly work on human-level data, dealing with offline behavior such as geographic mobility, financial fraud, and modeling socio-demographic characteristics. I am fascinated with other problems with a noise ceiling, such as healthcare.
+I’m interested in causal inference, its instersection with machine learning, human behavior, and measurements. I mostly work on human-level data, dealing with offline behavior such as health, geographic mobility, financial fraud, and modeling socio-demographic characteristics.
 
 You can email me at [avkazlou@gmail.com](mailto:avkazlou@gmail.com). I also have [Twtiiter](https://twitter.com/unfriendlydata) and [GitHub](https://github.com/aliaksandrkazlou).
 
