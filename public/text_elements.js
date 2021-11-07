@@ -12,7 +12,7 @@ var chapterOneNegative = "The literature has indicated several disadvantages of 
 
 var conflictsVariable = " I also create a measure of social unrest using Clio Infra (clioinfra.eu) indicating participation in internal and external armed conflicts. "
 var conflictsVariableShort = ", as well as internal and external armed conflicts."
-var mainVariable = "As the main independent variable, I use the democracy index from "
+var mainVariable = " As the main independent variable, I use the democracy index from "
 
 var varsDescription = new Map([
     ["gdp_level", "GPD level"],
