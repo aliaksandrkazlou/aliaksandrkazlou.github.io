@@ -33,3 +33,6 @@ version:          2.1.0
 
 github:
   repo:           https://github.com/aliaksandrkazlou/aliaksandrkazlou.github.io
+
+# Google Analytics
+google_analytics: UA-212232005-1
