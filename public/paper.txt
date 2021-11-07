@@ -28,13 +28,12 @@ ${firstChapter}
 
 \section{Data and Methods}
 
-This section evaluates the effect of democracy on economic growth using panel-data regression:
+This section describes the main panel-data regression with robust standard errors. I include country and year fixed effects in order to control for country fixed characteristics and global economic trends:
 \bigbreak
 ${formula}
 \bigbreak
-I include country and year fixed effects in order to control for country fixed characteristics and global economic trends.
 
-The main outcome variable, GDP per capita growth is from the World Development Indicators.
+The main outcome variable, GDP per capita growth, is from the World Development Indicators.
 ${varsDescription}
 
 \section{Results}
